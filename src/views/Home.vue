@@ -1,18 +1,78 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="list">
+      <Item
+        v-for="rumble in orderBy(rumbles,'date',-1)"
+        :key="rumble.id"
+        :id="rumble.id"
+        :uid="rumble.uid"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Item from "@/components/Item.vue";
+import { db } from "@/main";
+import Vue2Filters from "vue2-filters";
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  name: "Home",
+  data() {
+    return {
+      rumbles: []
+    };
+  },
+  firestore() {
+    return {
+      rumbles: db.collection("rumbles")
+    };
+  },
+  components: { Item },
+  mixins: [Vue2Filters.mixin]
+};
+</script>
+
+<style lang="stylus" scoped>
+.item {
+  list-style: none;
+  border-top: 1px solid #eee;
+  padding: 5px 15px;
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: flex-start;
+  position: relative;
+
+  &:first-child {
+    border: none;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .user-box {
+    margin: 10px 10px 10px 0;
+
+    .avatar {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: 1px solid #eee;
+      background-size: cover;
+    }
+
+    .user-name {
+      margin: 5px 0 0 0;
+      text-align: center;
+      font-size: 0.7rem;
+      line-height: 0.7rem;
+      width: 50px;
+    }
+  }
+
+  .content {
+    padding: 10px;
   }
 }
-</script>
+</style>
