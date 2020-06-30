@@ -60,7 +60,7 @@ export default {
     signOut() {
       if (window.confirm("Are You Sure to Sign Out?")) {
         auth.signOut().then(() => {
-          alert("You Safely Signed Out.");
+          console.log("You Safely Signed Out.");
           this.$router.push("/"), location.reload();
         });
       }
