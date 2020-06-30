@@ -55,9 +55,7 @@ export default {
   methods: {
     signIn() {
       const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithRedirect(provider).then(() => {
-        this.$router.push("/user/" + result.user.uid);
-      });
+      auth.signInWithRedirect(provider);
     },
     signOut() {
       if (window.confirm("Are You Sure to Sign Out?")) {
