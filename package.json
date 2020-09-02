@@ -9,19 +9,19 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/vue-fontawesome": "^0.1.10",
-    "firebase": "^7.18.0",
-    "vue": "^2.6.11",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "firebase": "^7.19.1",
+    "vue": "^2.6.12",
     "vue-router": "^3.4.3",
     "vue2-filters": "^0.11.0",
     "vuefire": "^2.2.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-router": "~4.5.3",
-    "@vue/cli-service": "~4.5.3",
+    "@vue/cli-plugin-router": "~4.5.4",
+    "@vue/cli-service": "~4.5.4",
     "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "browserslist": [
     "> 1%",
